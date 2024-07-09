@@ -1,12 +1,17 @@
 // you can do this by 2 ways either try catch or by Promises
-const asyncHandler = (requestHandler)=>{
-    (req,res,next)=> {
-        Promise.resolve(requestHandler(res,req,next)).
-        catch((err)=>next(err))
+
+
+const asyncHandler = (requestHandler) => {
+    return (req, res, next) => {
+        Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err))
     }
 }
 
-export {asyncHandler}
+
+export { asyncHandler }
+
+
+
 
 
 

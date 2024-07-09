@@ -1,11 +1,13 @@
 //require(`dotenv`).config({path: './env'})
 import connectDb from "./db/index.js";
 import dotenv, { configDotenv } from "dotenv"
-
+import { app } from './app.js';
 dotenv.config({
-    path: './env'
+    path: './.env'
 
 })
+
+
 connectDb()
 .then(()=>{
     app.listen(process.env.PORT||8000,()=>{
